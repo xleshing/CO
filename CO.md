@@ -210,16 +210,16 @@ $$ CPU 時間 = \frac{{指令數量} \times {CPI}}{時鐘頻率} $$
 1. 計算每台 CPU 的執行時間：
    - **CPU A** 的執行時間：
      
-    $$ 500 \times 1.5 = 750 ns $$
+$$ 500 \times 1.5 = 750 ns $$
    
    - **CPU B** 的執行時間：
-     
-    $$ 400 \times 1.8 = 720 $ ns $$
+
+$$ 400 \times 1.8 = 720 $ ns $$
    
 3. 比較兩者：
-   - **CPU B 較快**，其性能是 **CPU A 的
+   - **CPU B 較快**，其性能是CPU A 的
      
-     $$ \frac{750}{720} \approx 1.042  倍**。 $$
+$$ \frac{750}{720} \approx 1.042 倍 $$
 
 #### 3. IPC (Instructions Per Cycle)
 IPC 是指每個時鐘週期內完成的指令數量，可透過以下公式計算：
