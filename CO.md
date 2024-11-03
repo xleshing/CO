@@ -119,7 +119,7 @@ MIPS 處理器透過流水線 (Pipeline) 技術來提高指令吞吐量，將指
   - **MIPS (Million Instructions Per Second)**：指令執行速度，MIPS 值越高代表效能越好。
   - **CPU 執行時間公式**：
     
-     $ CPU 時間 = \frac{指令數量 \times CPI}{時鐘頻率} $
+     $$ CPU 時間 = \frac{指令數量 \times CPI}{時鐘頻率} $$
     
   - **Rpeak 計算浮點運算單元數量 (FPU)**：使用超級計算機中的核心數量、核心頻率和理論峰值運算速度 (Rpeak) 來估算浮點運算單元。
 
@@ -141,7 +141,7 @@ MIPS 是每秒執行的百萬條指令數，表示 CPU 執行速度。MIPS 的�
 
 - **計算公式**：
   
-  $$ MIPS = \frac{時鐘頻率（MHz）}{CPI} $$
+ $$ MIPS = \frac{時鐘頻率（MHz）}{CPI} $$
   
 - **例子**：若 CPU 時鐘頻率為 2 GHz（2000 MHz），CPI 為 2，則 MIPS 值為 $ \frac{2000}{2} = 1000 $ MIPS。
 
