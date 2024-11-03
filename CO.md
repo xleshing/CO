@@ -117,11 +117,35 @@ MIPS 處理器透過流水線 (Pipeline) 技術來提高指令吞吐量，將指
 ## 9. 性能指標與計算
   - **CPI (Cycles Per Instruction)**：平均每條指令所需的時鐘週期數，用於評估指令執行效率。
   - **MIPS (Million Instructions Per Second)**：指令執行速度，MIPS 值越高代表效能越好。
-  - **CPU 執行時間公式**：
-    \[
-    \text{CPU 時間} = \frac{\text{指令數量} \times \text{CPI}}{\text{時鐘頻率}}
-    \]
+  - **CPU 執行時間公式**： $ CPU 時間 = \frac{指令數量 \times CPI}{時鐘頻率} $
   - **Rpeak 計算浮點運算單元數量 (FPU)**：使用超級計算機中的核心數量、核心頻率和理論峰值運算速度 (Rpeak) 來估算浮點運算單元。
+
+---
+
+在評估 CPU 性能時，MIPS 使用以下幾個關鍵指標：
+
+#### 1. CPI (Cycles Per Instruction)
+CPI 是指平均每條指令需要的時鐘週期數，越低的 CPI 表示每條指令所需的時間越少，性能越高。
+
+- **計算公式**：
+ $$ CPI = \frac{總時鐘週期}{指令數量} $$
+- CPI 的影響因素包括指令組成、指令執行結構（如 Pipeline）、記憶體速度等。
+
+#### 2. MIPS (Million Instructions Per Second)
+MIPS 是每秒執行的百萬條指令數，表示 CPU 執行速度。MIPS 的值越高，代表 CPU 性能越好。
+
+- **計算公式**：
+  
+  $$ MIPS = \frac{時鐘頻率（MHz）}{CPI} $$
+  
+- **例子**：若 CPU 時鐘頻率為 2 GHz（2000 MHz），CPI 為 2，則 MIPS 值為 $ \frac{2000}{2} = 1000 $ MIPS。
+
+#### 3. CPU 執行時間
+CPU 的執行時間是衡量一個程式執行時間的指標，公式為：
+
+$$ CPU 時間 = 指令數 \times CPI \times 時鐘週期時間 $$
+
+其中，時鐘週期時間等於 $ \frac{1}{\text{時鐘頻率}} $。
 
 ## 10. 虛擬指令與組合指令
   - MIPS 中，某些虛擬指令 (Pseudo Instructions) 並不存在，但可透過其他指令組合來實現。例如 `bge` 可以用 `slt` 和 `bne` 指令來實現。
@@ -160,7 +184,7 @@ MIPS 的一些指令需要透過其他指令組合來實現，這些指令被稱
 #### 1. CPU 時間計算
 CPU 的執行時間可以透過指令數量、CPI 和時鐘頻率來計算：
 
-$$ CPU 時間 = {{指令數量} \times {CPI}}\over {時鐘頻率} $$
+$$ CPU 時間 = \frac{{指令數量} \times {CPI}}{時鐘頻率} $$
 
 其中：
 - **指令數量**：程式中需要執行的指令數量。
@@ -175,10 +199,10 @@ $$ CPU 時間 = {{指令數量} \times {CPI}}\over {時鐘頻率} $$
 
 比較方式：
 1. 計算每台 CPU 的執行時間：
-   - **CPU A** 的執行時間：\( 500 \times 1.5 = 750 \) ns。
-   - **CPU B** 的執行時間：\( 400 \times 1.8 = 720 \) ns。
+   - **CPU A** 的執行時間：$ 500 \times 1.5 = 750 $ ns。
+   - **CPU B** 的執行時間：$ 400 \times 1.8 = 720 $ ns。
 2. 比較兩者：
-   - **CPU B 較快**，其性能是 **CPU A 的 \( \frac{750}{720} \approx 1.042 \) 倍**。
+   - **CPU B 較快**，其性能是 **CPU A 的 $ \frac{750}{720} \approx 1.042 $ 倍**。
 
 #### 3. IPC (Instructions Per Cycle)
 IPC 是指每個時鐘週期內完成的指令數量，可透過以下公式計算：
@@ -204,31 +228,3 @@ IPC 值越高，CPU 的指令吞吐量越
 
 
 
-### 9. 性能指標與計算
-
-在評估 CPU 性能時，MIPS 使用以下幾個關鍵指標：
-
-#### 1. CPI (Cycles Per Instruction)
-CPI 是指平均每條指令需要的時鐘週期數，越低的 CPI 表示每條指令所需的時間越少，性能越高。
-
-- **計算公式**：
-  \[
-  \text{CPI} = \frac{\text{總時鐘週期}}{\text{指令數量}}
-  \]
-- CPI 的影響因素包括指令組成、指令執行結構（如 Pipeline）、記憶體速度等。
-
-#### 2. MIPS (Million Instructions Per Second)
-MIPS 是每秒執行的百萬條指令數，表示 CPU 執行速度。MIPS 的值越高，代表 CPU 性能越好。
-
-- **計算公式**：
-  \[
-  \text{MIPS} = \frac{\text{時鐘頻率（MHz）}}{\text{CPI}}
-  \]
-- **例子**：若 CPU 時鐘頻率為 2 GHz（2000 MHz），CPI 為 2，則 MIPS 值為 \( \frac{2000}{2} = 1000 \) MIPS。
-
-#### 3. CPU 執行時間
-CPU 的執行時間是衡量一個程式執行時間的指標，公式為：
-\[
-\text{CPU 時間} = \text{指令數} \times \text{CPI} \times \text{時鐘週期時間}
-\]
-其中，時鐘週期時間等於 \( \frac{1}{\text{時鐘頻率}} \)。
