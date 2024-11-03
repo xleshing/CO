@@ -117,7 +117,10 @@ MIPS 處理器透過流水線 (Pipeline) 技術來提高指令吞吐量，將指
 ## 9. 性能指標與計算
   - **CPI (Cycles Per Instruction)**：平均每條指令所需的時鐘週期數，用於評估指令執行效率。
   - **MIPS (Million Instructions Per Second)**：指令執行速度，MIPS 值越高代表效能越好。
-  - **CPU 執行時間公式**： $ CPU 時間 = \frac{指令數量 \times CPI}{時鐘頻率} $
+  - **CPU 執行時間公式**：
+    
+     $ CPU 時間 = \frac{指令數量 \times CPI}{時鐘頻率} $
+    
   - **Rpeak 計算浮點運算單元數量 (FPU)**：使用超級計算機中的核心數量、核心頻率和理論峰值運算速度 (Rpeak) 來估算浮點運算單元。
 
 ---
@@ -128,7 +131,9 @@ MIPS 處理器透過流水線 (Pipeline) 技術來提高指令吞吐量，將指
 CPI 是指平均每條指令需要的時鐘週期數，越低的 CPI 表示每條指令所需的時間越少，性能越高。
 
 - **計算公式**：
+  
  $$ CPI = \frac{總時鐘週期}{指令數量} $$
+ 
 - CPI 的影響因素包括指令組成、指令執行結構（如 Pipeline）、記憶體速度等。
 
 #### 2. MIPS (Million Instructions Per Second)
